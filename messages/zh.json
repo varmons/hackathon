@@ -1,0 +1,61 @@
+{
+    "HomePage": {
+        "title": "黑客松项目展示",
+        "subtitle": "发现并分享精彩的黑客松项目",
+        "searchPlaceholder": "搜索项目...",
+        "noProjects": "未找到项目。"
+    },
+    "Header": {
+        "explore": "探索",
+        "submit": "提交",
+        "submitProject": "提交项目"
+    },
+    "Footer": {
+        "copyright": "© {year} Hackathon Showcase. 开源项目。"
+    },
+    "ProjectCard": {
+        "noImage": "无图片",
+        "views": "浏览",
+        "likes": "点赞"
+    },
+    "ProjectForm": {
+        "title": "提交您的项目",
+        "subtitle": "向世界分享您的黑客松项目。",
+        "form": {
+            "title": "项目标题",
+            "titlePlaceholder": "我的精彩项目",
+            "description": "简短描述",
+            "descriptionPlaceholder": "项目功能的简要概述...",
+            "category": "分类",
+            "categoryPlaceholder": "选择分类",
+            "tags": "标签 (逗号分隔)",
+            "tagsPlaceholder": "React, Next.js, AI",
+            "repositoryUrl": "代码仓库 URL",
+            "repositoryUrlPlaceholder": "https://github.com/username/repo",
+            "demoUrl": "演示 URL",
+            "demoUrlPlaceholder": "https://my-project.vercel.app",
+            "content": "详细内容 (Markdown)",
+            "contentPlaceholder": "# 我的项目详情...",
+            "submit": "提交项目",
+            "submitting": "提交中...",
+            "success": "项目提交成功！",
+            "error": "出错了，请重试。"
+        }
+    },
+    "ProjectPage": {
+        "back": "返回项目列表",
+        "anonymous": "匿名",
+        "links": "链接",
+        "stats": "统计",
+        "tags": "标签",
+        "views": "浏览",
+        "likes": "点赞",
+        "viewCode": "查看代码",
+        "viewDemo": "查看演示",
+        "noImage": "无图片"
+    },
+    "Common": {
+        "loading": "加载中...",
+        "error": "出错了"
+    }
+}

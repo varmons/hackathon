@@ -1,0 +1,61 @@
+{
+    "HomePage": {
+        "title": "Hackathon Showcase",
+        "subtitle": "Discover and share amazing hackathon projects",
+        "searchPlaceholder": "Search projects...",
+        "noProjects": "No projects found."
+    },
+    "Header": {
+        "explore": "Explore",
+        "submit": "Submit",
+        "submitProject": "Submit Project"
+    },
+    "Footer": {
+        "copyright": "© {year} Hackathon Showcase. Open Source."
+    },
+    "ProjectCard": {
+        "noImage": "No Image",
+        "views": "Views",
+        "likes": "Likes"
+    },
+    "ProjectForm": {
+        "title": "Submit Your Project",
+        "subtitle": "Share your hackathon project with the world.",
+        "form": {
+            "title": "Project Title",
+            "titlePlaceholder": "My Awesome Project",
+            "description": "Short Description",
+            "descriptionPlaceholder": "A brief overview of what your project does...",
+            "category": "Category",
+            "categoryPlaceholder": "Select a category",
+            "tags": "Tags (comma separated)",
+            "tagsPlaceholder": "React, Next.js, AI",
+            "repositoryUrl": "Repository URL",
+            "repositoryUrlPlaceholder": "https://github.com/username/repo",
+            "demoUrl": "Demo URL",
+            "demoUrlPlaceholder": "https://my-project.vercel.app",
+            "content": "Detailed Content (Markdown)",
+            "contentPlaceholder": "# My Project Details...",
+            "submit": "Submit Project",
+            "submitting": "Submitting...",
+            "success": "Project submitted successfully!",
+            "error": "Something went wrong. Please try again."
+        }
+    },
+    "ProjectPage": {
+        "back": "Back to Projects",
+        "anonymous": "Anonymous",
+        "links": "Links",
+        "stats": "Stats",
+        "tags": "Tags",
+        "views": "Views",
+        "likes": "Likes",
+        "viewCode": "View Code",
+        "viewDemo": "View Demo",
+        "noImage": "No Image"
+    },
+    "Common": {
+        "loading": "Loading...",
+        "error": "Something went wrong"
+    }
+}
