@@ -1,6 +1,13 @@
 import { prisma } from '@/lib/prisma';
 import { Prisma } from '@prisma/client';
 
+const slugify = (value: string) =>
+    value
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
 export const projectService = {
     async getProjects(params: { category?: string; search?: string }) {
         const where: Prisma.ProjectWhereInput = {
@@ -53,13 +60,29 @@ export const projectService = {
         tags?: string[];
     }) {
         const { tags, ...rest } = data;
+        const normalizedTags = tags
+            ?.map((tag) => tag.trim())
+            .filter(Boolean);
+
+        const tagConnectOrCreate = normalizedTags && normalizedTags.length > 0
+            ? Array.from(new Set(normalizedTags)).map((tagName) => {
+                const slug = slugify(tagName);
+                return {
+                    where: { slug },
+                    create: { name: tagName, slug },
+                };
+            })
+            : undefined;
+
         return prisma.project.create({
             data: {
                 ...rest,
                 published: true,
-                tags: tags ? {
-                    connect: tags.map((t) => ({ id: t })), // Assuming tags are IDs
-                } : undefined,
+                tags: tagConnectOrCreate
+                    ? {
+                        connectOrCreate: tagConnectOrCreate,
+                    }
+                    : undefined,
             },
         });
     },
