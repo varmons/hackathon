@@ -1,13 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { Github, Menu, X } from 'lucide-react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
 
 export default function Header({ locale }: { locale: string }) {
     const t = useTranslations('Header');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    const buildLocaleHref = useCallback(
+        (targetLocale: string) => {
+            if (!pathname) return `/${targetLocale}`;
+
+            const segments = pathname.split('/');
+            if (segments.length > 1) {
+                segments[1] = targetLocale;
+            } else {
+                segments.push(targetLocale);
+            }
+
+            const path = segments.join('/') || '/';
+            const query = searchParams?.toString();
+            return query ? `${path}?${query}` : path;
+        },
+        [pathname, searchParams]
+    );
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
@@ -29,9 +50,9 @@ export default function Header({ locale }: { locale: string }) {
 
                 <div className="flex items-center gap-4">
                     <div className="hidden md:flex items-center gap-2">
-                        <Link href="/en" className={`text-xs ${locale === 'en' ? 'font-bold' : ''}`}>EN</Link>
-                        <Link href="/zh" className={`text-xs ${locale === 'zh' ? 'font-bold' : ''}`}>中文</Link>
-                        <Link href="/ja" className={`text-xs ${locale === 'ja' ? 'font-bold' : ''}`}>JP</Link>
+                        <Link href={buildLocaleHref('en')} className={`text-xs ${locale === 'en' ? 'font-bold' : ''}`}>EN</Link>
+                        <Link href={buildLocaleHref('zh')} className={`text-xs ${locale === 'zh' ? 'font-bold' : ''}`}>中文</Link>
+                        <Link href={buildLocaleHref('ja')} className={`text-xs ${locale === 'ja' ? 'font-bold' : ''}`}>JP</Link>
                     </div>
 
                     <div className="hidden md:block">
@@ -62,9 +83,9 @@ export default function Header({ locale }: { locale: string }) {
                             {t('submit')}
                         </Link>
                         <div className="flex gap-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-                            <Link href="/en" className={locale === 'en' ? 'font-bold' : ''}>English</Link>
-                            <Link href="/zh" className={locale === 'zh' ? 'font-bold' : ''}>中文</Link>
-                            <Link href="/ja" className={locale === 'ja' ? 'font-bold' : ''}>日本語</Link>
+                            <Link href={buildLocaleHref('en')} className={locale === 'en' ? 'font-bold' : ''}>English</Link>
+                            <Link href={buildLocaleHref('zh')} className={locale === 'zh' ? 'font-bold' : ''}>中文</Link>
+                            <Link href={buildLocaleHref('ja')} className={locale === 'ja' ? 'font-bold' : ''}>日本語</Link>
                         </div>
                     </nav>
                 </div>
