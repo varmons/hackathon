@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { projectService } from '@/services/projectService';
 import ProjectCard from '@/components/ProjectCard';
+import { ProjectWithRelations } from '@/types';
 
 export default async function HomePage({
     params,
@@ -13,7 +14,7 @@ export default async function HomePage({
     const { category, search } = await searchParams;
 
     const t = await getTranslations('HomePage');
-    const projects = await projectService.getProjects({
+        const projects: ProjectWithRelations[] = await projectService.getProjects({
         category,
         search,
     });

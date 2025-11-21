@@ -3,6 +3,7 @@ import { projectService } from '@/services/projectService';
 import { Calendar, Github, ExternalLink, Eye, ThumbsUp, User } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import { ProjectWithRelations } from '@/types';
 
 export default async function ProjectPage({
     params,
@@ -10,7 +11,7 @@ export default async function ProjectPage({
     params: Promise<{ id: string; locale: string }>;
 }) {
     const { id, locale } = await params;
-    const project = await projectService.getProjectById(id);
+        const project: ProjectWithRelations | null = await projectService.getProjectById(id);
     const t = await getTranslations('ProjectPage');
 
     if (!project) {
@@ -135,7 +136,7 @@ export default async function ProjectPage({
                             {t('tags')}
                         </h3>
                         <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
+                            {project.tags.map((tag: { id: string; name: string; slug: string }) => (
                                 <span
                                     key={tag.id}
                                     className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300"
