@@ -1,20 +1,26 @@
 'use client';
 
+import {useMemo} from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { Calendar, Github, ExternalLink, Eye, ThumbsUp } from 'lucide-react';
-import { ProjectWithRelations } from '@/types';
+import {useTranslations} from 'next-intl';
+import {Calendar, ExternalLink, Eye, Github, ThumbsUp} from 'lucide-react';
+import {AppLocale} from '@/i18n';
+import {ProjectWithRelations} from '@/types';
+import {formatDate, formatNumber} from '@/utils/format';
 
-interface ProjectCardProps {
+type ProjectCardProps = {
     project: ProjectWithRelations;
-    locale: string;
-}
+    locale: AppLocale;
+};
 
-export default function ProjectCard({ project, locale }: ProjectCardProps) {
-    const t = useTranslations('ProjectCard');
+export default function ProjectCard({project, locale}: ProjectCardProps) {
+    const t = useTranslations('component.projectCard');
+    const createdAt = useMemo(() => formatDate(project.createdAt, locale), [project.createdAt, locale]);
+    const viewsLabel = useMemo(() => formatNumber(project.views, locale), [project.views, locale]);
+    const likesLabel = useMemo(() => formatNumber(project.likes, locale), [project.likes, locale]);
 
     return (
-        <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
+        <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:-translate-y-1 hover:shadow-md dark:border-gray-800 dark:bg-gray-950">
             <div className="aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
                 {project.thumbnail ? (
                     <img
@@ -23,7 +29,7 @@ export default function ProjectCard({ project, locale }: ProjectCardProps) {
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                 ) : (
-                    <div className="flex h-full w-full items-center justify-center text-gray-400">
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 text-sm font-semibold text-white/70">
                         {t('noImage')}
                     </div>
                 )}
@@ -38,7 +44,7 @@ export default function ProjectCard({ project, locale }: ProjectCardProps) {
                     )}
                     <span className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
-                        {new Date(project.createdAt).toLocaleDateString(locale)}
+                        {createdAt}
                     </span>
                 </div>
 
@@ -49,23 +55,21 @@ export default function ProjectCard({ project, locale }: ProjectCardProps) {
                     </Link>
                 </h3>
 
-                <p className="mb-4 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
-                    {project.description}
-                </p>
+                <p className="mb-4 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">{project.description}</p>
 
                 <div className="mt-auto flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
                     <div className="flex items-center gap-2">
                         <div className="flex items-center gap-1">
                             <Eye className="h-3.5 w-3.5" />
-                            {project.views} {t('views')}
+                            {viewsLabel} {t('views')}
                         </div>
                         <div className="flex items-center gap-1">
                             <ThumbsUp className="h-3.5 w-3.5" />
-                            {project.likes} {t('likes')}
+                            {likesLabel} {t('likes')}
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-2 z-10">
+                    <div className="z-10 flex items-center gap-2">
                         {project.repositoryUrl && (
                             <a
                                 href={project.repositoryUrl}

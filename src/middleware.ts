@@ -1,14 +1,12 @@
 import createMiddleware from 'next-intl/middleware';
+import {DEFAULT_LOCALE, SUPPORTED_LOCALES} from './i18n';
 
 export default createMiddleware({
-    // A list of all locales that are supported
-    locales: ['en', 'zh', 'ja'],
-
-    // Used when no locale matches
-    defaultLocale: 'en'
+    locales: SUPPORTED_LOCALES,
+    defaultLocale: DEFAULT_LOCALE,
+    localePrefix: 'always',
 });
 
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ['/', '/(zh|en|ja)/:path*']
+    matcher: ['/', '/(en|zh-CN|ja-JP)/:path*'],
 };

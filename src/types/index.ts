@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client';
+import {Prisma} from '@prisma/client';
 
 export type ProjectWithRelations = Prisma.ProjectGetPayload<{
     include: {
@@ -6,4 +6,8 @@ export type ProjectWithRelations = Prisma.ProjectGetPayload<{
         category: true;
         tags: true;
     };
-}>;
+}> & {
+    galleryUrls?: unknown;
+    thumbnail?: string | null;
+    attachments?: unknown;
+};

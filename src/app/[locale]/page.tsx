@@ -1,7 +1,8 @@
-import { getTranslations } from 'next-intl/server';
-import { projectService } from '@/services/projectService';
 import ProjectCard from '@/components/ProjectCard';
-import { ProjectWithRelations } from '@/types';
+import {projectRepository} from '@/domain/projects/projectRepository';
+import {AppLocale} from '@/i18n';
+import {ProjectWithRelations} from '@/types';
+import {getTranslations} from 'next-intl/server';
 
 export default async function HomePage({
     params,
@@ -10,11 +11,12 @@ export default async function HomePage({
     params: Promise<{ locale: string }>;
     searchParams: Promise<{ category?: string; search?: string }>;
 }) {
-    const { locale } = await params;
-    const { category, search } = await searchParams;
+    const {locale} = await params;
+    const normalizedLocale = locale as AppLocale;
+    const {category, search} = await searchParams;
 
-    const t = await getTranslations('HomePage');
-        const projects: ProjectWithRelations[] = await projectService.getProjects({
+    const t = await getTranslations('page.home');
+    const projects: ProjectWithRelations[] = await projectRepository.list({
         category,
         search,
     });
@@ -25,23 +27,17 @@ export default async function HomePage({
                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
                     {t('title')}
                 </h1>
-                <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-                    {t('subtitle')}
-                </p>
+                <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">{t('subtitle')}</p>
             </div>
 
-            {/* Search and Filter could go here */}
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {projects.map((project) => (
-                    <ProjectCard key={project.id} project={project} locale={locale} />
+                    <ProjectCard key={project.id} project={project} locale={normalizedLocale} />
                 ))}
             </div>
 
             {projects.length === 0 && (
-                <div className="text-center text-gray-500 py-12">
-                    {t('noProjects')}
-                </div>
+                <div className="py-12 text-center text-gray-500 dark:text-gray-400">{t('empty')}</div>
             )}
         </div>
     );

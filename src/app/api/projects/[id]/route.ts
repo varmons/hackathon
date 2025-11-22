@@ -1,76 +1,91 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { z } from 'zod';
+import {projectRepository} from '@/domain/projects/projectRepository';
+import {errorResponse, successResponse} from '@/utils/apiResponse';
+import {NextRequest, NextResponse} from 'next/server';
+import {z} from 'zod';
 
 const updateSchema = z.object({
     title: z.string().min(1).optional(),
     description: z.string().min(1).optional(),
     content: z.string().optional(),
-    repositoryUrl: z.string().url().optional().or(z.literal('')),
-    demoUrl: z.string().url().optional().or(z.literal('')),
+    repositoryUrl: z
+        .string()
+        .url()
+        .optional()
+        .or(z.literal(''))
+        .transform((value) => value || undefined),
+    demoUrl: z
+        .string()
+        .url()
+        .optional()
+        .or(z.literal(''))
+        .transform((value) => value || undefined),
     categoryId: z.string().optional(),
+    images: z.array(z.string()).max(9).optional(),
+    attachments: z
+        .array(
+            z.object({
+                name: z.string(),
+                type: z.string(),
+                size: z.number(),
+                content: z.string(),
+            }),
+        )
+        .max(10)
+        .optional(),
+    eventId: z.string().optional(),
     published: z.boolean().optional(),
 });
 
-export async function GET(
-    request: NextRequest,
-    { params }: { params: Promise<{ id: string }> }
-) {
-    const id = (await params).id;
+export async function GET(_: NextRequest, {params}: { params: Promise<{ id: string }> }) {
+    const {id} = await params;
     try {
-        const project = await prisma.project.findUnique({
-            where: { id },
-            include: {
-                author: {
-                    select: { name: true, image: true },
-                },
-                category: true,
-                tags: true,
-            },
-        });
+        const project = await projectRepository.findById(id);
 
         if (!project) {
-            return NextResponse.json({ error: 'Project not found' }, { status: 404 });
+            return NextResponse.json(errorResponse('PROJECT.NOT_FOUND'), {status: 404});
         }
 
-        return NextResponse.json(project);
+        return NextResponse.json(successResponse(project));
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to fetch project' }, { status: 500 });
+        console.error('[API] Failed to fetch project', error);
+        return NextResponse.json(errorResponse('PROJECT.LIST_FAILED'), {status: 500});
     }
 }
 
-export async function PUT(
-    request: NextRequest,
-    { params }: { params: Promise<{ id: string }> }
-) {
-    const id = (await params).id;
+export async function PUT(request: NextRequest, {params}: { params: Promise<{ id: string }> }) {
+    const {id} = await params;
     try {
         const body = await request.json();
-        const validated = updateSchema.parse(body);
+        const validated = updateSchema.safeParse(body);
+        if (!validated.success) {
+            return NextResponse.json(
+                errorResponse('COMMON.VALIDATION_ERROR', 'Invalid payload', validated.error.flatten()),
+                {status: 400},
+            );
+        }
 
-        const project = await prisma.project.update({
-            where: { id },
-            data: validated,
+        const project = await projectRepository.update(id, {
+            ...validated.data,
+            galleryUrls: validated.data.images,
+            attachments: validated.data.attachments,
+            eventId: validated.data.eventId,
         });
 
-        return NextResponse.json(project);
+        return NextResponse.json(successResponse(project));
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to update project' }, { status: 400 });
+        console.error('[API] Failed to update project', error);
+        return NextResponse.json(errorResponse('PROJECT.UPDATE_FAILED'), {status: 400});
     }
 }
 
-export async function DELETE(
-    request: NextRequest,
-    { params }: { params: Promise<{ id: string }> }
-) {
-    const id = (await params).id;
+export async function DELETE(_: NextRequest, {params}: { params: Promise<{ id: string }> }) {
+    const {id} = await params;
     try {
-        await prisma.project.delete({
-            where: { id },
-        });
+        await projectRepository.delete(id);
 
-        return NextResponse.json({ success: true });
+        return NextResponse.json(successResponse({}));
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to delete project' }, { status: 500 });
+        console.error('[API] Failed to delete project', error);
+        return NextResponse.json(errorResponse('PROJECT.DELETE_FAILED'), {status: 500});
     }
 }

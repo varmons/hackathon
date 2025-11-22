@@ -1,0 +1,280 @@
+{
+    "brand": {
+        "name": "Hackathon Showcase",
+        "tagline": "Discover and share outstanding hackathon projects"
+    },
+    "nav": {
+        "home": "Explore",
+        "submit": "Submit",
+        "submitCta": "Submit Project",
+        "language": "Language",
+        "events": "Events",
+        "ideas": "Ideas"
+    },
+    "component": {
+        "footer": {
+            "copyright": "© {year} Hackathon Showcase"
+        },
+        "projectCard": {
+            "noImage": "No image",
+            "views": "views",
+            "likes": "likes"
+        },
+        "common": {
+            "ideaPlaceholder": "Idea",
+            "eventPlaceholder": "Event",
+            "imagePlaceholder": "Image"
+        }
+    },
+    "page": {
+        "home": {
+            "title": "Hackathon Showcase",
+            "subtitle": "Discover and share outstanding hackathon projects built in hackathons around the world.",
+            "empty": "No projects yet. Be the first to submit!"
+        },
+        "submit": {
+            "title": "Submit a project",
+            "subtitle": "Share your hackathon project with the community.",
+            "missingAuthor": "Demo user is missing. Please seed the database.",
+            "loadCategoriesError": "Failed to load categories."
+        },
+        "project": {
+            "back": "Back",
+            "noImage": "No image",
+            "anonymous": "Anonymous",
+            "gallery": "Gallery",
+            "links": "Links",
+            "viewCode": "View code",
+            "viewDemo": "View demo",
+            "stats": "Stats",
+            "tags": "Tags",
+            "views": "Views",
+            "likes": "Likes",
+            "notFound": "Project not found."
+        }
+    },
+    "idea": {
+        "list": {
+            "badge": "Idea Hub",
+            "title": "Idea Hub",
+            "subtitle": "Explore and share creative ideas to inspire, improve, and realize them.",
+            "cta": {
+                "explore": "Explore ideas",
+                "create": "Publish idea"
+            },
+            "tagLabel": "Tags:",
+            "sortLabel": "Sort:",
+            "all": "All",
+            "sort": {
+                "latest": "Latest",
+                "hot": "Hot",
+                "contribution": "Most contribution"
+            }
+        },
+        "create": {
+            "title": "Publish idea",
+            "subtitle": "Share your inspiration so more people can join and improve it."
+        },
+        "form": {
+            "title": "Publish idea",
+            "subtitle": "Share your inspiration so more people can join and improve it.",
+            "fields": {
+                "title": "Idea title",
+                "description": "Idea description",
+                "images": "Upload images (optional)",
+                "tags": "Tags (optional)"
+            },
+            "placeholders": {
+                "title": "e.g. AI-powered note assistant",
+                "description": "Describe your idea in detail..."
+            },
+            "tips": {
+                "share": "After publishing, others can give feedback to improve the idea.",
+                "dev": "Developers can build on your idea and link back to it.",
+                "edit": "You can edit or delete your idea anytime."
+            },
+            "optional": "Optional",
+            "prev": "Previous",
+            "next": "Next",
+            "saveDraft": "Save draft",
+            "submit": "Publish idea",
+            "submitting": "Submitting...",
+            "validationError": "Please check the required fields.",
+            "missingTitle": "Please enter a title.",
+            "submitError": "Failed to submit idea."
+        },
+        "detail": {
+            "back": "Back to ideas",
+            "views": "views",
+            "likes": "likes",
+            "contributions": {
+                "empty": "No contributions yet, be the first!"
+            },
+            "projects": {
+                "empty": "No projects yet, build something from this idea!"
+            },
+            "creator": "Creator",
+            "anonymous": "Anonymous",
+            "images": "Images"
+        }
+    },
+    "event": {
+        "list": {
+            "title": "Events",
+            "subtitle": "Discover hackathons and community events.",
+            "create": "Create event",
+            "status": {
+                "upcoming": "Upcoming",
+                "running": "Running",
+                "ended": "Ended"
+            },
+            "filter": {
+                "all": "All events"
+            },
+            "sort": {
+                "label": "Sort:",
+                "upcoming": "Upcoming first",
+                "recent": "Recently added"
+            },
+            "empty": "No events yet.",
+            "placeholder": "Event"
+        },
+        "create": {
+            "title": "Create event",
+            "subtitle": "Share your hackathon or community event."
+        },
+        "form": {
+            "title": "Event title",
+            "titlePlaceholder": "AI Builders Hackathon 2024",
+            "subtitle": "Subtitle",
+            "subtitlePlaceholder": "One line hook for your event",
+            "summary": "Summary",
+            "summaryPlaceholder": "Briefly describe what the event is about...",
+            "location": "Location",
+            "locationPlaceholder": "City / venue / online",
+            "startAt": "Start time",
+            "endAt": "End time",
+            "registerLink": "Registration link",
+            "registerLinkPlaceholder": "https://example.com/register",
+            "registerDeadline": "Registration deadline",
+            "capacity": "Capacity",
+            "capacityPlaceholder": "Leave blank for unlimited",
+            "status": "Status",
+            "statusUpcoming": "Upcoming",
+            "statusRunning": "Running",
+            "statusEnded": "Ended",
+            "descriptionLabel": "Event details (Markdown)",
+            "descriptionHelper": "Use the editor to describe agenda, rules, prizes, etc.",
+            "descriptionPlaceholder": "# Event details...",
+            "banner": "Banner image",
+            "bannerPlaceholder": "https://...",
+            "gallery": "Event gallery",
+            "cancel": "Cancel",
+            "submit": "Publish event",
+            "validationError": "Please fill required fields.",
+            "error": "Failed to submit event.",
+            "views": "views",
+            "likes": "likes"
+        },
+        "detail": {
+            "detail": "Event details",
+            "noDescription": "No description yet.",
+            "agenda": "Agenda",
+            "agendaPlaceholder": "Agenda goes here.",
+            "info": "Event info",
+            "time": "Time",
+            "location": "Location",
+            "register": "Register",
+            "registerCta": "Register now",
+            "noRegister": "No registration link provided.",
+            "back": "Back to events",
+            "views": "views",
+            "likes": "likes",
+            "placeholder": "Event"
+        }
+    },
+    "form": {
+        "project": {
+            "title": "Project title",
+            "titleHint": "Pick something clear and concise.",
+            "titlePlaceholder": "e.g. AI teammate for hackathons",
+            "description": "Short description",
+            "descriptionHelper": "Summarize what your project does.",
+            "descriptionPlaceholder": "Describe your project in a few sentences...",
+            "content": "Detailed content (Markdown)",
+            "contentPlaceholder": "# Project details...",
+            "images": {
+                "label": "Hero images",
+                "helper": "Upload up to {count} images.",
+                "cta": "Upload images",
+                "alt": "Project image {index}",
+                "remove": "Remove image",
+                "tooLarge": "Image is too large (>{size}MB)."
+            },
+            "attachments": {
+                "title": "Attachments (optional)",
+                "helper": "Upload PDF/Markdown/Word to enrich the project.",
+                "cta": "Add attachments",
+                "limit": "0/10 · Supports PDF, Markdown, Word up to 10MB each",
+                "tooLarge": "Attachment is too large (>{size}MB)."
+            },
+            "tagsField": {
+                "title": "Tags",
+                "hint": "Add keywords so people can find your project.",
+                "placeholder": "Add a tag and press Enter",
+                "create": "Add",
+                "remove": "Remove {tag}",
+                "suggestions": "Quick picks"
+            },
+            "eventSelect": {
+                "title": "Link to an event (optional)",
+                "helper": "If the project comes from a hackathon or event, link it here.",
+                "none": "Do not link to an event"
+            },
+            "demoUrl": "Demo URL",
+            "demoUrlHelper": "Add a live demo if available.",
+            "demoUrlPlaceholder": "https://...",
+            "repositoryUrl": "Repository URL",
+            "repositoryUrlHelper": "Link to your source code.",
+            "repositoryUrlPlaceholder": "https://github.com/...",
+            "optional": "Optional",
+            "submit": "Submit project",
+            "submitting": "Submitting...",
+            "success": "Project created successfully.",
+            "error": "Something went wrong.",
+            "validationError": "Please check required fields."
+        }
+    },
+    "feedback": {
+        "success": {
+            "projectCreated": "Project created successfully."
+        }
+    },
+    "error": {
+        "common": {
+            "unknown": "Something went wrong.",
+            "network": "Network error. Please try again.",
+            "validation": "Data validation failed."
+        },
+        "project": {
+            "loadFailed": "Unable to load project.",
+            "createFailed": "Could not create the project.",
+            "updateFailed": "Could not update the project.",
+            "deleteFailed": "Could not delete the project.",
+            "notFound": "Project not found.",
+            "missingUser": "Demo user is missing. Please seed the database."
+        },
+        "idea": {
+            "loadFailed": "Unable to load idea.",
+            "createFailed": "Could not create the idea.",
+            "notFound": "Idea not found."
+        },
+        "event": {
+            "loadFailed": "Unable to load event.",
+            "createFailed": "Could not create the event.",
+            "notFound": "Event not found.",
+            "updateFailed": "Could not update the event.",
+            "deleteFailed": "Could not delete the event."
+        }
+    }
+}

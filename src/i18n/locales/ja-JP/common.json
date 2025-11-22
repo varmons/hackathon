@@ -1,0 +1,280 @@
+{
+    "brand": {
+        "name": "Hackathon Showcase",
+        "tagline": "優れたハッカソンプロジェクトを発見して共有しよう"
+    },
+    "nav": {
+        "home": "探索",
+        "submit": "投稿",
+        "submitCta": "プロジェクトを投稿",
+        "language": "言語",
+        "events": "イベント",
+        "ideas": "アイデア"
+    },
+    "component": {
+        "footer": {
+            "copyright": "© {year} Hackathon Showcase"
+        },
+        "projectCard": {
+            "noImage": "画像なし",
+            "views": "閲覧",
+            "likes": "いいね"
+        },
+        "common": {
+            "ideaPlaceholder": "アイデア",
+            "eventPlaceholder": "イベント",
+            "imagePlaceholder": "画像"
+        }
+    },
+    "page": {
+        "home": {
+            "title": "Hackathon Showcase",
+            "subtitle": "世界中のハッカソンで生まれた優れたプロジェクトを見つけて共有しよう。",
+            "empty": "まだプロジェクトがありません。最初に投稿しましょう！"
+        },
+        "submit": {
+            "title": "プロジェクトを投稿",
+            "subtitle": "あなたのハッカソン作品を共有しましょう。",
+            "missingAuthor": "デモユーザーが見つかりません。データをシードしてください。",
+            "loadCategoriesError": "カテゴリの読み込みに失敗しました。"
+        },
+        "project": {
+            "back": "戻る",
+            "noImage": "画像なし",
+            "anonymous": "匿名",
+            "gallery": "ギャラリー",
+            "links": "リンク",
+            "viewCode": "コードを見る",
+            "viewDemo": "デモを見る",
+            "stats": "統計",
+            "tags": "タグ",
+            "views": "閲覧",
+            "likes": "いいね",
+            "notFound": "プロジェクトが見つかりません。"
+        }
+    },
+    "idea": {
+        "list": {
+            "badge": "アイデア広場",
+            "title": "アイデア広場",
+            "subtitle": "アイデアを探索・共有し、インスピレーションを発見・改善・実現へつなげよう。",
+            "cta": {
+                "explore": "アイデアを探す",
+                "create": "アイデアを公開"
+            },
+            "tagLabel": "タグ：",
+            "sortLabel": "並び替え：",
+            "all": "すべて",
+            "sort": {
+                "latest": "最新",
+                "hot": "人気",
+                "contribution": "貢献が多い"
+            }
+        },
+        "create": {
+            "title": "アイデアを公開",
+            "subtitle": "インスピレーションを共有し、より多くの人と一緒に磨き上げましょう。"
+        },
+        "form": {
+            "title": "アイデアを公開",
+            "subtitle": "インスピレーションを共有し、より多くの人と一緒に磨き上げましょう。",
+            "fields": {
+                "title": "アイデアタイトル",
+                "description": "アイデアの説明",
+                "images": "画像をアップロード（任意）",
+                "tags": "タグ（任意）"
+            },
+            "placeholders": {
+                "title": "例：AI ベースのノートアシスタント",
+                "description": "あなたのアイデアを詳しく書いてください..."
+            },
+            "tips": {
+                "share": "公開後、他の人がフィードバックをくれます。",
+                "dev": "開発者がこのアイデアを基にプロジェクトを作り、紐づけることができます。",
+                "edit": "いつでも編集や削除ができます。"
+            },
+            "optional": "任意",
+            "prev": "前へ",
+            "next": "次へ",
+            "saveDraft": "下書きを保存",
+            "submit": "アイデアを公開",
+            "submitting": "送信中...",
+            "validationError": "必須項目を確認してください。",
+            "missingTitle": "タイトルを入力してください。",
+            "submitError": "アイデアの送信に失敗しました。"
+        },
+        "detail": {
+            "back": "アイデア一覧に戻る",
+            "views": "閲覧",
+            "likes": "いいね",
+            "contributions": {
+                "empty": "まだ貢献はありません。最初の一人になりましょう！"
+            },
+            "projects": {
+                "empty": "まだ関連プロジェクトはありません。実装してみましょう！"
+            },
+            "creator": "作成者",
+            "anonymous": "匿名",
+            "images": "画像"
+        }
+    },
+    "event": {
+        "list": {
+            "title": "イベント",
+            "subtitle": "ハッカソンやコミュニティイベントを見つけよう。",
+            "create": "イベントを作成",
+            "status": {
+                "upcoming": "開催予定",
+                "running": "開催中",
+                "ended": "終了"
+            },
+            "filter": {
+                "all": "すべてのイベント"
+            },
+            "sort": {
+                "label": "並び替え：",
+                "upcoming": "開始が早い順",
+                "recent": "最近追加"
+            },
+            "empty": "イベントがありません。",
+            "placeholder": "イベント"
+        },
+        "create": {
+            "title": "イベントを作成",
+            "subtitle": "あなたのハッカソンやコミュニティイベントを共有しましょう。"
+        },
+        "form": {
+            "title": "イベント名",
+            "titlePlaceholder": "AI Builders Hackathon 2024",
+            "subtitle": "サブタイトル",
+            "subtitlePlaceholder": "1 行のフック",
+            "summary": "概要",
+            "summaryPlaceholder": "イベントの概要を簡潔に...",
+            "location": "場所",
+            "locationPlaceholder": "都市 / 会場 / オンライン",
+            "startAt": "開始時間",
+            "endAt": "終了時間",
+            "registerLink": "登録リンク",
+            "registerLinkPlaceholder": "https://example.com/register",
+            "registerDeadline": "登録締切",
+            "capacity": "定員",
+            "capacityPlaceholder": "空欄で無制限",
+            "status": "ステータス",
+            "statusUpcoming": "開催予定",
+            "statusRunning": "開催中",
+            "statusEnded": "終了",
+            "descriptionLabel": "イベント詳細（Markdown）",
+            "descriptionHelper": "日程・ルール・賞金などを記載してください。",
+            "descriptionPlaceholder": "# イベント詳細...",
+            "banner": "バナー画像",
+            "bannerPlaceholder": "https://...",
+            "gallery": "イベントギャラリー",
+            "cancel": "キャンセル",
+            "submit": "イベントを公開",
+            "validationError": "必須項目を入力してください。",
+            "error": "イベントの送信に失敗しました。",
+            "views": "閲覧",
+            "likes": "いいね"
+        },
+        "detail": {
+            "detail": "イベント詳細",
+            "noDescription": "説明がまだありません。",
+            "agenda": "アジェンダ",
+            "agendaPlaceholder": "アジェンダは後で追加されます。",
+            "info": "イベント情報",
+            "time": "時間",
+            "location": "場所",
+            "register": "登録",
+            "registerCta": "今すぐ登録",
+            "noRegister": "登録リンクがありません。",
+            "back": "イベント一覧に戻る",
+            "views": "閲覧",
+            "likes": "いいね",
+            "placeholder": "イベント"
+        }
+    },
+    "form": {
+        "project": {
+            "title": "プロジェクトタイトル",
+            "titleHint": "分かりやすく簡潔に。",
+            "titlePlaceholder": "例：AI ハッカソンアシスタント",
+            "description": "プロジェクト概要",
+            "descriptionHelper": "何をするプロジェクトかを簡潔に説明してください。",
+            "descriptionPlaceholder": "数行でプロジェクトを紹介...",
+            "content": "詳細（Markdown）",
+            "contentPlaceholder": "# プロジェクト詳細...",
+            "images": {
+                "label": "メイン画像",
+                "helper": "最大 {count} 枚アップロードできます。",
+                "cta": "画像をアップロード",
+                "alt": "プロジェクト画像 {index}",
+                "remove": "画像を削除",
+                "tooLarge": "画像サイズが大きすぎます（>{size}MB）。"
+            },
+            "attachments": {
+                "title": "添付ファイル（任意）",
+                "helper": "PDF/Markdown/Word を追加して情報を充実させましょう。",
+                "cta": "添付を追加",
+                "limit": "0/10 ・ PDF/Markdown/Word 対応、各 10MB 以内",
+                "tooLarge": "添付ファイルが大きすぎます（>{size}MB）。"
+            },
+            "tagsField": {
+                "title": "タグ",
+                "hint": "キーワードを追加して見つけやすく。",
+                "placeholder": "タグを入力して Enter",
+                "create": "追加",
+                "remove": "{tag} を削除",
+                "suggestions": "おすすめタグ"
+            },
+            "eventSelect": {
+                "title": "関連イベント（任意）",
+                "helper": "このプロジェクトがハッカソン等に由来する場合はここで紐づけます。",
+                "none": "イベントを紐づけない"
+            },
+            "demoUrl": "デモ URL",
+            "demoUrlHelper": "可能ならライブデモを追加してください。",
+            "demoUrlPlaceholder": "https://...",
+            "repositoryUrl": "リポジトリ URL",
+            "repositoryUrlHelper": "ソースコードへのリンク。",
+            "repositoryUrlPlaceholder": "https://github.com/...",
+            "optional": "任意",
+            "submit": "プロジェクトを投稿",
+            "submitting": "送信中...",
+            "success": "プロジェクトを作成しました。",
+            "error": "エラーが発生しました。",
+            "validationError": "必須項目を確認してください。"
+        }
+    },
+    "feedback": {
+        "success": {
+            "projectCreated": "プロジェクトを作成しました。"
+        }
+    },
+    "error": {
+        "common": {
+            "unknown": "不明なエラーが発生しました。",
+            "network": "ネットワークエラーです。再試行してください。",
+            "validation": "入力内容を確認してください。"
+        },
+        "project": {
+            "loadFailed": "プロジェクトの読み込みに失敗しました。",
+            "createFailed": "プロジェクトの作成に失敗しました。",
+            "updateFailed": "プロジェクトの更新に失敗しました。",
+            "deleteFailed": "プロジェクトの削除に失敗しました。",
+            "notFound": "プロジェクトが見つかりません。",
+            "missingUser": "デモユーザーが不足しています。シードを実行してください。"
+        },
+        "idea": {
+            "loadFailed": "アイデアの読み込みに失敗しました。",
+            "createFailed": "アイデアの作成に失敗しました。",
+            "notFound": "アイデアが見つかりません。"
+        },
+        "event": {
+            "loadFailed": "イベントの読み込みに失敗しました。",
+            "createFailed": "イベントの作成に失敗しました。",
+            "notFound": "イベントが見つかりません。",
+            "updateFailed": "イベントの更新に失敗しました。",
+            "deleteFailed": "イベントの削除に失敗しました。"
+        }
+    }
+}

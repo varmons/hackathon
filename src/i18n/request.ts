@@ -1,16 +1,15 @@
 import {getRequestConfig} from 'next-intl/server';
- 
+import {DEFAULT_LOCALE, SUPPORTED_LOCALES, loadMessages, normalizeLocale} from '.';
+
 export default getRequestConfig(async ({requestLocale}) => {
-  // This typically corresponds to the `[locale]` segment
-  let locale = await requestLocale;
- 
-  // Ensure that a valid locale is used
-  if (!locale || !['en', 'zh', 'ja'].includes(locale)) {
-    locale = 'en';
-  }
- 
-  return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default
-  };
+    const rawLocale = await requestLocale;
+    const normalized = normalizeLocale(rawLocale);
+
+    const locale: typeof SUPPORTED_LOCALES[number] =
+        SUPPORTED_LOCALES.includes(normalized) ? normalized : DEFAULT_LOCALE;
+
+    return {
+        locale,
+        messages: await loadMessages(locale),
+    };
 });

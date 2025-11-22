@@ -1,0 +1,280 @@
+{
+    "brand": {
+        "name": "Hackathon Showcase",
+        "tagline": "发现并分享优秀的黑客松项目"
+    },
+    "nav": {
+        "home": "探索",
+        "submit": "提交",
+        "submitCta": "提交项目",
+        "language": "语言",
+        "events": "活动",
+        "ideas": "创意"
+    },
+    "component": {
+        "footer": {
+            "copyright": "© {year} Hackathon Showcase"
+        },
+        "projectCard": {
+            "noImage": "暂无图片",
+            "views": "浏览",
+            "likes": "点赞"
+        },
+        "common": {
+            "ideaPlaceholder": "创意",
+            "eventPlaceholder": "活动",
+            "imagePlaceholder": "图片"
+        }
+    },
+    "page": {
+        "home": {
+            "title": "Hackathon Showcase",
+            "subtitle": "发现并分享来自全球黑客松的优秀项目。",
+            "empty": "还没有项目，快来第一个提交吧！"
+        },
+        "submit": {
+            "title": "提交项目",
+            "subtitle": "与社区分享你的黑客松作品。",
+            "missingAuthor": "示例用户缺失，请先执行数据填充。",
+            "loadCategoriesError": "分类加载失败。"
+        },
+        "project": {
+            "back": "返回",
+            "noImage": "暂无图片",
+            "anonymous": "匿名",
+            "gallery": "图集",
+            "links": "链接",
+            "viewCode": "查看代码",
+            "viewDemo": "查看演示",
+            "stats": "数据",
+            "tags": "标签",
+            "views": "浏览",
+            "likes": "点赞",
+            "notFound": "未找到项目。"
+        }
+    },
+    "idea": {
+        "list": {
+            "badge": "创意广场",
+            "title": "创意广场",
+            "subtitle": "探索和分享创意，让灵感被发现、完善、落地。",
+            "cta": {
+                "explore": "探索创意",
+                "create": "发布创意"
+            },
+            "tagLabel": "标签：",
+            "sortLabel": "排序：",
+            "all": "全部",
+            "sort": {
+                "latest": "最新",
+                "hot": "最热",
+                "contribution": "最多贡献"
+            }
+        },
+        "create": {
+            "title": "发布创意",
+            "subtitle": "分享你的灵感，让更多人一起完善它。"
+        },
+        "form": {
+            "title": "发布创意",
+            "subtitle": "分享你的灵感，让更多人一起完善它。",
+            "fields": {
+                "title": "创意标题",
+                "description": "创意描述",
+                "images": "上传图片（可选）",
+                "tags": "标签（可选）"
+            },
+            "placeholders": {
+                "title": "例如：AI 驱动的笔记助手",
+                "description": "详细描述你的创意..."
+            },
+            "tips": {
+                "share": "发布后，其他人可以提供反馈完善创意。",
+                "dev": "开发者可以基于你的创意开发并关联回来。",
+                "edit": "你可以随时编辑或删除自己的创意。"
+            },
+            "optional": "可选",
+            "prev": "上一步",
+            "next": "下一步",
+            "saveDraft": "保存草稿",
+            "submit": "发布创意",
+            "submitting": "提交中...",
+            "validationError": "请检查必填项。",
+            "missingTitle": "请输入标题。",
+            "submitError": "提交创意失败。"
+        },
+        "detail": {
+            "back": "返回创意列表",
+            "views": "浏览",
+            "likes": "点赞",
+            "contributions": {
+                "empty": "还没有贡献，成为第一个吧！"
+            },
+            "projects": {
+                "empty": "还没有相关项目，快来实现这个创意！"
+            },
+            "creator": "创建者",
+            "anonymous": "匿名",
+            "images": "图片"
+        }
+    },
+    "event": {
+        "list": {
+            "title": "活动",
+            "subtitle": "发现黑客松和社区活动。",
+            "create": "创建活动",
+            "status": {
+                "upcoming": "即将开始",
+                "running": "进行中",
+                "ended": "已结束"
+            },
+            "filter": {
+                "all": "全部活动"
+            },
+            "sort": {
+                "label": "排序：",
+                "upcoming": "按开始时间",
+                "recent": "最近添加"
+            },
+            "empty": "暂无活动。",
+            "placeholder": "活动"
+        },
+        "create": {
+            "title": "创建活动",
+            "subtitle": "分享你的黑客松或社区活动。"
+        },
+        "form": {
+            "title": "活动名称",
+            "titlePlaceholder": "AI Builders Hackathon 2024",
+            "subtitle": "副标题",
+            "subtitlePlaceholder": "一句话亮点",
+            "summary": "概要",
+            "summaryPlaceholder": "简单介绍活动内容...",
+            "location": "地点",
+            "locationPlaceholder": "城市 / 场地 / 线上",
+            "startAt": "开始时间",
+            "endAt": "结束时间",
+            "registerLink": "报名链接",
+            "registerLinkPlaceholder": "https://example.com/register",
+            "registerDeadline": "报名截止",
+            "capacity": "人数限制",
+            "capacityPlaceholder": "留空表示不限",
+            "status": "状态",
+            "statusUpcoming": "即将开始",
+            "statusRunning": "进行中",
+            "statusEnded": "已结束",
+            "descriptionLabel": "活动详情（Markdown）",
+            "descriptionHelper": "在此描述日程、规则、奖励等。",
+            "descriptionPlaceholder": "# 活动详情...",
+            "banner": "横幅图片",
+            "bannerPlaceholder": "https://...",
+            "gallery": "活动图集",
+            "cancel": "取消",
+            "submit": "发布活动",
+            "validationError": "请填写必填项。",
+            "error": "提交活动失败。",
+            "views": "浏览",
+            "likes": "点赞"
+        },
+        "detail": {
+            "detail": "活动详情",
+            "noDescription": "暂未提供描述。",
+            "agenda": "日程",
+            "agendaPlaceholder": "日程内容待补充。",
+            "info": "活动信息",
+            "time": "时间",
+            "location": "地点",
+            "register": "报名",
+            "registerCta": "立即报名",
+            "noRegister": "暂无报名链接。",
+            "back": "返回活动列表",
+            "views": "浏览",
+            "likes": "点赞",
+            "placeholder": "活动"
+        }
+    },
+    "form": {
+        "project": {
+            "title": "项目标题",
+            "titleHint": "保持清晰简洁。",
+            "titlePlaceholder": "例如：AI 黑客松助手",
+            "description": "项目简介",
+            "descriptionHelper": "简要说明项目做了什么。",
+            "descriptionPlaceholder": "用几句话描述你的项目...",
+            "content": "详细内容（Markdown）",
+            "contentPlaceholder": "# 项目详情...",
+            "images": {
+                "label": "宣传图片",
+                "helper": "最多上传 {count} 张图片。",
+                "cta": "上传图片",
+                "alt": "项目图片 {index}",
+                "remove": "移除图片",
+                "tooLarge": "图片过大（>{size}MB）。"
+            },
+            "attachments": {
+                "title": "项目附件（可选）",
+                "helper": "上传 PDF/Markdown/Word 丰富项目信息。",
+                "cta": "添加附件",
+                "limit": "0/10 · 支持 PDF、Markdown、Word，单个不超过 10MB",
+                "tooLarge": "附件过大（>{size}MB）。"
+            },
+            "tagsField": {
+                "title": "标签",
+                "hint": "添加关键词，方便他人搜索。",
+                "placeholder": "输入标签后回车",
+                "create": "添加",
+                "remove": "移除 {tag}",
+                "suggestions": "推荐标签"
+            },
+            "eventSelect": {
+                "title": "关联活动（可选）",
+                "helper": "如果项目来自某个黑客松/活动，可在此关联。",
+                "none": "不关联任何活动"
+            },
+            "demoUrl": "演示地址",
+            "demoUrlHelper": "如有在线演示请添加。",
+            "demoUrlPlaceholder": "https://...",
+            "repositoryUrl": "代码仓库",
+            "repositoryUrlHelper": "链接到你的源码。",
+            "repositoryUrlPlaceholder": "https://github.com/...",
+            "optional": "可选",
+            "submit": "提交项目",
+            "submitting": "提交中...",
+            "success": "项目创建成功。",
+            "error": "出错了，请重试。",
+            "validationError": "请检查必填项。"
+        }
+    },
+    "feedback": {
+        "success": {
+            "projectCreated": "项目创建成功。"
+        }
+    },
+    "error": {
+        "common": {
+            "unknown": "发生未知错误。",
+            "network": "网络错误，请重试。",
+            "validation": "数据校验失败。"
+        },
+        "project": {
+            "loadFailed": "项目加载失败。",
+            "createFailed": "项目创建失败。",
+            "updateFailed": "项目更新失败。",
+            "deleteFailed": "项目删除失败。",
+            "notFound": "未找到项目。",
+            "missingUser": "缺少示例用户，请先填充数据。"
+        },
+        "idea": {
+            "loadFailed": "创意加载失败。",
+            "createFailed": "创意创建失败。",
+            "notFound": "未找到创意。"
+        },
+        "event": {
+            "loadFailed": "活动加载失败。",
+            "createFailed": "活动创建失败。",
+            "notFound": "未找到活动。",
+            "updateFailed": "活动更新失败。",
+            "deleteFailed": "活动删除失败。"
+        }
+    }
+}

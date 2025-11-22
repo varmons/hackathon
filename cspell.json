@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Hackathon",
+    "hackathons",
+    "Nextjs",
+    "Prisma",
+    "tailwindcss",
+    "lucide",
+    "tsx",
+    "zod",
+    "cuid",
+    "evenodd"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".next/**",
+    "out/**",
+    "build/**"
+  ]
+}
